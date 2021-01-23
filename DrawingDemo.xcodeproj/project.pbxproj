@@ -14,6 +14,7 @@
 		04B16A2425BC0E5A00041AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B16A2325BC0E5A00041AB4 /* Assets.xcassets */; };
 		04B16A2725BC0E5A00041AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B16A2525BC0E5A00041AB4 /* LaunchScreen.storyboard */; };
 		04B16A2A25BC0E5A00041AB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A2925BC0E5A00041AB4 /* main.m */; };
+		04B16A3525BC0EBC00041AB4 /* Drawing_attributed_stringsV.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A3425BC0EBC00041AB4 /* Drawing_attributed_stringsV.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		04B16A2625BC0E5A00041AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B16A2825BC0E5A00041AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04B16A2925BC0E5A00041AB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04B16A3325BC0EBC00041AB4 /* Drawing_attributed_stringsV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drawing_attributed_stringsV.h; sourceTree = "<group>"; };
+		04B16A3425BC0EBC00041AB4 /* Drawing_attributed_stringsV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Drawing_attributed_stringsV.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 		04B16A1625BC0E5600041AB4 /* DrawingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				04B16A3125BC0E9D00041AB4 /* View */,
 				04B16A1725BC0E5600041AB4 /* AppDelegate.h */,
 				04B16A1825BC0E5600041AB4 /* AppDelegate.m */,
 				04B16A1A25BC0E5600041AB4 /* SceneDelegate.h */,
@@ -74,6 +78,23 @@
 				04B16A2925BC0E5A00041AB4 /* main.m */,
 			);
 			path = DrawingDemo;
+			sourceTree = "<group>";
+		};
+		04B16A3125BC0E9D00041AB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04B16A3225BC0EAC00041AB4 /* Drawing attributed strings */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B16A3225BC0EAC00041AB4 /* Drawing attributed strings */ = {
+			isa = PBXGroup;
+			children = (
+				04B16A3325BC0EBC00041AB4 /* Drawing_attributed_stringsV.h */,
+				04B16A3425BC0EBC00041AB4 /* Drawing_attributed_stringsV.m */,
+			);
+			path = "Drawing attributed strings";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B16A1F25BC0E5600041AB4 /* ViewController.m in Sources */,
+				04B16A3525BC0EBC00041AB4 /* Drawing_attributed_stringsV.m in Sources */,
 				04B16A1925BC0E5600041AB4 /* AppDelegate.m in Sources */,
 				04B16A2A25BC0E5A00041AB4 /* main.m in Sources */,
 				04B16A1C25BC0E5600041AB4 /* SceneDelegate.m in Sources */,
