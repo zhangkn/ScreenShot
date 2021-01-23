@@ -42,11 +42,10 @@
     
     
  
-    // Draw the string
+    //1、在坐标中画出文字
 //    [string drawInRect: self.frame withAttributes: stringAttributes];
-    
-    [string drawAtPoint: CGPointMake(100, 100) withAttributes: stringAttributes];
-
+    //2、在point点开始画文字
+    [string drawAtPoint: CGPointMake(100, 30) withAttributes: stringAttributes];//
 
     
 }

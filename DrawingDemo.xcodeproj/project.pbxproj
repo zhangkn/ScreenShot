@@ -15,6 +15,8 @@
 		04B16A2725BC0E5A00041AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B16A2525BC0E5A00041AB4 /* LaunchScreen.storyboard */; };
 		04B16A2A25BC0E5A00041AB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A2925BC0E5A00041AB4 /* main.m */; };
 		04B16A3525BC0EBC00041AB4 /* Drawing_attributed_stringsV.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A3425BC0EBC00041AB4 /* Drawing_attributed_stringsV.m */; };
+		04B16A3C25BC22E100041AB4 /* KNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A3B25BC22E100041AB4 /* KNCustomView.m */; };
+		04B16A4125BC24C400041AB4 /* KNmatrixV.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A4025BC24C400041AB4 /* KNmatrixV.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		04B16A2925BC0E5A00041AB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04B16A3325BC0EBC00041AB4 /* Drawing_attributed_stringsV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drawing_attributed_stringsV.h; sourceTree = "<group>"; };
 		04B16A3425BC0EBC00041AB4 /* Drawing_attributed_stringsV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Drawing_attributed_stringsV.m; sourceTree = "<group>"; };
+		04B16A3A25BC22E100041AB4 /* KNCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNCustomView.h; sourceTree = "<group>"; };
+		04B16A3B25BC22E100041AB4 /* KNCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNCustomView.m; sourceTree = "<group>"; };
+		04B16A3F25BC24C400041AB4 /* KNmatrixV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNmatrixV.h; sourceTree = "<group>"; };
+		04B16A4025BC24C400041AB4 /* KNmatrixV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNmatrixV.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,8 @@
 		04B16A3125BC0E9D00041AB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B16A3E25BC24AB00041AB4 /* 矩阵操作matrix */,
+				04B16A3825BC227300041AB4 /* KNCustomView */,
 				04B16A3225BC0EAC00041AB4 /* Drawing attributed strings */,
 			);
 			path = View;
@@ -95,6 +103,24 @@
 				04B16A3425BC0EBC00041AB4 /* Drawing_attributed_stringsV.m */,
 			);
 			path = "Drawing attributed strings";
+			sourceTree = "<group>";
+		};
+		04B16A3825BC227300041AB4 /* KNCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				04B16A3A25BC22E100041AB4 /* KNCustomView.h */,
+				04B16A3B25BC22E100041AB4 /* KNCustomView.m */,
+			);
+			path = KNCustomView;
+			sourceTree = "<group>";
+		};
+		04B16A3E25BC24AB00041AB4 /* 矩阵操作matrix */ = {
+			isa = PBXGroup;
+			children = (
+				04B16A3F25BC24C400041AB4 /* KNmatrixV.h */,
+				04B16A4025BC24C400041AB4 /* KNmatrixV.m */,
+			);
+			path = "矩阵操作matrix";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +149,9 @@
 		04B16A0C25BC0E5600041AB4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KN;
 				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "https://kunnan.blog.csdn.net  ";
 				TargetAttributes = {
 					04B16A1325BC0E5600041AB4 = {
 						CreatedOnToolsVersion = 12.0;
@@ -166,11 +194,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B16A3C25BC22E100041AB4 /* KNCustomView.m in Sources */,
 				04B16A1F25BC0E5600041AB4 /* ViewController.m in Sources */,
 				04B16A3525BC0EBC00041AB4 /* Drawing_attributed_stringsV.m in Sources */,
 				04B16A1925BC0E5600041AB4 /* AppDelegate.m in Sources */,
 				04B16A2A25BC0E5A00041AB4 /* main.m in Sources */,
 				04B16A1C25BC0E5600041AB4 /* SceneDelegate.m in Sources */,
+				04B16A4125BC24C400041AB4 /* KNmatrixV.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
