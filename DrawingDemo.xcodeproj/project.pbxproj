@@ -18,6 +18,8 @@
 		04B16A3C25BC22E100041AB4 /* KNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A3B25BC22E100041AB4 /* KNCustomView.m */; };
 		04B16A4125BC24C400041AB4 /* KNmatrixV.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A4025BC24C400041AB4 /* KNmatrixV.m */; };
 		04B16A4725BE721100041AB4 /* KNWatermark.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A4625BE721100041AB4 /* KNWatermark.m */; };
+		04B16A4C25BEB07100041AB4 /* KNClipV.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A4B25BEB07100041AB4 /* KNClipV.m */; };
+		04B16A5125BEB76200041AB4 /* UIImage+KNClip.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A5025BEB76200041AB4 /* UIImage+KNClip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		04B16A4025BC24C400041AB4 /* KNmatrixV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNmatrixV.m; sourceTree = "<group>"; };
 		04B16A4525BE721100041AB4 /* KNWatermark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNWatermark.h; sourceTree = "<group>"; };
 		04B16A4625BE721100041AB4 /* KNWatermark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNWatermark.m; sourceTree = "<group>"; };
+		04B16A4A25BEB07100041AB4 /* KNClipV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNClipV.h; sourceTree = "<group>"; };
+		04B16A4B25BEB07100041AB4 /* KNClipV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNClipV.m; sourceTree = "<group>"; };
+		04B16A4F25BEB76200041AB4 /* UIImage+KNClip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+KNClip.h"; sourceTree = "<group>"; };
+		04B16A5025BEB76200041AB4 /* UIImage+KNClip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KNClip.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		04B16A3125BC0E9D00041AB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B16A4925BEB06200041AB4 /* Clip图片裁剪 */,
 				04B16A4425BE720600041AB4 /* 水印 */,
 				04B16A3E25BC24AB00041AB4 /* 矩阵操作matrix */,
 				04B16A3825BC227300041AB4 /* KNCustomView */,
@@ -134,6 +141,17 @@
 				04B16A4625BE721100041AB4 /* KNWatermark.m */,
 			);
 			path = "水印";
+			sourceTree = "<group>";
+		};
+		04B16A4925BEB06200041AB4 /* Clip图片裁剪 */ = {
+			isa = PBXGroup;
+			children = (
+				04B16A4A25BEB07100041AB4 /* KNClipV.h */,
+				04B16A4F25BEB76200041AB4 /* UIImage+KNClip.h */,
+				04B16A5025BEB76200041AB4 /* UIImage+KNClip.m */,
+				04B16A4B25BEB07100041AB4 /* KNClipV.m */,
+			);
+			path = "Clip图片裁剪";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B16A4C25BEB07100041AB4 /* KNClipV.m in Sources */,
 				04B16A3C25BC22E100041AB4 /* KNCustomView.m in Sources */,
 				04B16A1F25BC0E5600041AB4 /* ViewController.m in Sources */,
 				04B16A3525BC0EBC00041AB4 /* Drawing_attributed_stringsV.m in Sources */,
+				04B16A5125BEB76200041AB4 /* UIImage+KNClip.m in Sources */,
 				04B16A1925BC0E5600041AB4 /* AppDelegate.m in Sources */,
 				04B16A2A25BC0E5A00041AB4 /* main.m in Sources */,
 				04B16A1C25BC0E5600041AB4 /* SceneDelegate.m in Sources */,

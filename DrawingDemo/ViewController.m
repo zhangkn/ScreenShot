@@ -12,6 +12,9 @@
 
 #import "KNWatermark.h"
 
+#import "UIImage+KNClip.h"
+
+
 @interface ViewController ()
 
 @end
@@ -32,11 +35,36 @@
     
 //    [self iOSDevloperLearn4CGContextRef];
     // 水印
-    [self setupwatermark];
+//    [self setupwatermark];
+    // 裁剪
+    
+    [self setupclip];
+    
+
     
     
 }
 
+
+- (void)setupclip{
+    
+    
+    CGFloat  borderWidth = 10;
+    
+//    UIImage  *WatermarkImg =  [UIImage imageWithName:@"csdn" border:borderWidth borderColor:UIColor.yellowColor imgw:self.view.frame.size.width-borderWidth*2 ];
+    
+    //
+    UIImage  *WatermarkImg =  [UIImage imageWithName:@"QRCode_336" border:borderWidth borderColor:UIColor.yellowColor imgw:self.view.frame.size.width-borderWidth*2 ];
+
+//    UIImage  *WatermarkImg =  [UIImage imageWithName:@"icon4gz" border:borderWidth borderColor:UIColor.yellowColor imgw:self.view.frame.size.width-borderWidth*2 ];
+
+                      
+//    UIImage  *WatermarkImg =  [UIImage imageWithName:@"gz" border:borderWidth borderColor:UIColor.yellowColor imgw:self.view.frame.size.width-borderWidth*2 ];
+
+    [self showImagetoVWithImg:WatermarkImg];
+
+    
+}
 
 - (void)setupwatermark{
     
@@ -48,8 +76,20 @@
 
 //    UIImage  *WatermarkImg =  [KNWatermark getWatermarkImaheWithImgaeName:@"gz" withWatermark:@"@公众号：iOS逆向" watermarkColor:UIColor.blackColor imgw:self.view.bounds.size.width];
     
-    UIImage  *WatermarkImg =  [KNWatermark getWatermarkImaheWithImgaeName:@"csdn" withWatermark:@"@公众号：iOS逆向" watermarkColor:UIColor.blackColor imgw:self.view.bounds.size.width];
+    UIImage  *WatermarkImg =  [UIImage getWatermarkImaheWithImgaeName:@"csdn" withWatermark:@"@公众号：iOS逆向" watermarkColor:UIColor.blackColor imgw:self.view.bounds.size.width];
 
+    
+    [self showImagetoVWithImg:WatermarkImg];
+    
+
+    
+}
+/**
+ 显示图片
+ */
+- (void)showImagetoVWithImg:(UIImage*)WatermarkImg{
+    
+    
     
     //2、显示图片
  
@@ -76,8 +116,6 @@ imageView.contentMode = UIViewContentModeScaleAspectFit;//按照图片的原来�
  
     [data writeToFile:@"/Users/Mac/Desktop/gz.png" atomically:YES];// 模拟器
 
-
-    
 }
 
 
