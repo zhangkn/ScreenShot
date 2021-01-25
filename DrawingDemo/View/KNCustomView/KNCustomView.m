@@ -266,6 +266,8 @@
     
 }
 
+
+
 //图形相反 镜像
 /**
  图片上下颠倒
@@ -275,14 +277,18 @@
     
     /*图片*/
     UIImage *image = [UIImage imageNamed:@"gz"];
+//1、 图片上下颠倒
 
     CGContextDrawImage(context, CGRectMake(88, 340+80, 1710/5.99, 624/5.99), image.CGImage);
-    
+//2、在坐标中画出图片
     
     [image drawInRect:CGRectMake(60, 340+80, 20, 20)];//在坐标中画出图片
-//    [image drawAtPoint:CGPointMake(100, 340)];//保持图片大小在point点开始画图片，可以把注释去掉看看
     
-//    CGContextDrawTiledImage(context, CGRectMake(0, 0, 20, 20), image.CGImage);//平铺图
+    
+    //3、保持图片大小在point点开始画图片
+//    [image drawAtPoint:CGPointMake(88, 340+80)];//保持图片大小在point点开始画图片，可以把注释去掉看看
+    //4、平铺图
+//    CGContextDrawTiledImage(context, CGRectMake(60, 340+80, 20, 20), image.CGImage);//平铺图
 
 
 }

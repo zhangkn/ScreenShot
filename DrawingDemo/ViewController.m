@@ -10,6 +10,8 @@
 
 #import "ViewController.h"
 
+#import "KNWatermark.h"
+
 @interface ViewController ()
 
 @end
@@ -28,11 +30,59 @@
 //    [self iOSDevloperLearn4UILabel];
     //3、各种图形(文字、圆、直线、弧线、矩形、扇形、椭圆、三角形、圆角矩形、贝塞尔曲线、图片)
     
-    [self iOSDevloperLearn4CGContextRef];
+//    [self iOSDevloperLearn4CGContextRef];
+    // 水印
+    [self setupwatermark];
+    
     
 }
 
+
+- (void)setupwatermark{
+    
+    
+    
+    
+// 1、获取带有水印的图片
+    
+
+//    UIImage  *WatermarkImg =  [KNWatermark getWatermarkImaheWithImgaeName:@"gz" withWatermark:@"@公众号：iOS逆向" watermarkColor:UIColor.blackColor imgw:self.view.bounds.size.width];
+    
+    UIImage  *WatermarkImg =  [KNWatermark getWatermarkImaheWithImgaeName:@"csdn" withWatermark:@"@公众号：iOS逆向" watermarkColor:UIColor.blackColor imgw:self.view.bounds.size.width];
+
+    
+    //2、显示图片
+ 
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, WatermarkImg.size.width, WatermarkImg.size.height)];
+    
+    
+
+//图片的显示尺寸不能超过imageView尺寸大小.This will make sure the image inside the image view will have the right aspect ratio and fits inside the image view’s boundaries.
+
+
+imageView.contentMode = UIViewContentModeScaleAspectFit;//按照图片的原来宽高比进行缩放
+
+    [imageView setImage:WatermarkImg];
+    
+ 
+    [self.view addSubview:imageView];
+ 
+    //3、保存图片
+ 
+//    NSData *data = UIImageJPEGRepresentation(newImage, 0.0001);// value 1.0 represents the least compression (or best quality)
+ 
+    NSData *data = UIImagePNGRepresentation(WatermarkImg);//将图片转换成二进制数据
+    
+ 
+    [data writeToFile:@"/Users/Mac/Desktop/gz.png" atomically:YES];// 模拟器
+
+
+    
+}
+
+
 - (void)iOSDevloperLearn4CGContextRef{
+    
     
     
     
@@ -113,5 +163,7 @@
     [self.view addSubview:label];
 
 }
+
+
 
 @end

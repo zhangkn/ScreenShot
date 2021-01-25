@@ -17,6 +17,7 @@
 		04B16A3525BC0EBC00041AB4 /* Drawing_attributed_stringsV.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A3425BC0EBC00041AB4 /* Drawing_attributed_stringsV.m */; };
 		04B16A3C25BC22E100041AB4 /* KNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A3B25BC22E100041AB4 /* KNCustomView.m */; };
 		04B16A4125BC24C400041AB4 /* KNmatrixV.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A4025BC24C400041AB4 /* KNmatrixV.m */; };
+		04B16A4725BE721100041AB4 /* KNWatermark.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B16A4625BE721100041AB4 /* KNWatermark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		04B16A3B25BC22E100041AB4 /* KNCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNCustomView.m; sourceTree = "<group>"; };
 		04B16A3F25BC24C400041AB4 /* KNmatrixV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNmatrixV.h; sourceTree = "<group>"; };
 		04B16A4025BC24C400041AB4 /* KNmatrixV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNmatrixV.m; sourceTree = "<group>"; };
+		04B16A4525BE721100041AB4 /* KNWatermark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNWatermark.h; sourceTree = "<group>"; };
+		04B16A4625BE721100041AB4 /* KNWatermark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNWatermark.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 		04B16A3125BC0E9D00041AB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B16A4425BE720600041AB4 /* 水印 */,
 				04B16A3E25BC24AB00041AB4 /* 矩阵操作matrix */,
 				04B16A3825BC227300041AB4 /* KNCustomView */,
 				04B16A3225BC0EAC00041AB4 /* Drawing attributed strings */,
@@ -121,6 +125,15 @@
 				04B16A4025BC24C400041AB4 /* KNmatrixV.m */,
 			);
 			path = "矩阵操作matrix";
+			sourceTree = "<group>";
+		};
+		04B16A4425BE720600041AB4 /* 水印 */ = {
+			isa = PBXGroup;
+			children = (
+				04B16A4525BE721100041AB4 /* KNWatermark.h */,
+				04B16A4625BE721100041AB4 /* KNWatermark.m */,
+			);
+			path = "水印";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +214,7 @@
 				04B16A2A25BC0E5A00041AB4 /* main.m in Sources */,
 				04B16A1C25BC0E5600041AB4 /* SceneDelegate.m in Sources */,
 				04B16A4125BC24C400041AB4 /* KNmatrixV.m in Sources */,
+				04B16A4725BE721100041AB4 /* KNWatermark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
