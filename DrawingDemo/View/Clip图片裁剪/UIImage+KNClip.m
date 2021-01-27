@@ -12,6 +12,64 @@
 
 /**
  
+ 
+ 屏幕截图：
+ 
+ 方式一：
+ 调用某个view的layer的renderInContext:方法即可
+ 
+ - (void)renderInContext:(CGContextRef)ctx;
+ 
+ 
+ 方式二：iOS7之后的推荐使用
+ 
+ if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+
+ */
++ (UIImage *)ScreenShotWithV:(UIView*)view imgw:(CGFloat)imgw{
+
+        
+    
+    
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0);
+
+//    UIGraphicsBeginImageContext(view.bounds.size);
+//       CGContextRef context = UIGraphicsGetCurrentContext();
+     
+       //将layer渲染到上下文
+     
+//       [view.layer renderInContext:context];
+    
+    if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+        //Renders a snapshot of the complete view hierarchy as visible onscreen into the current context.
+
+        [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];// 在viewDidAppear的时候才会将视图渲染到上下文
+    } else {
+        //Renders the layer and its sublayers into the specified context.
+
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    }
+
+     
+       //获取新图片
+     
+       UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+     // 保存
+//       NSData *data = UIImagePNGRepresentation(newImage);
+
+    //       [data writeToFile:@"/Users/devzkn/Desktop/layer.png" atomically:YES];
+    UIGraphicsEndImageContext();
+
+//    return  newImage;
+    return [self getWatermarkImaheWithImgae:newImage withWatermark:@"" watermarkColor:UIColor.clearColor imgw:imgw];// 进行等比例压缩图片
+
+    
+
+}
+    
+    
+/**
+ 
  方式1: Uses the clipping path of the current graphics context to intersect the region that the path encloses, and makes the resulting shape the current clipping path.
  Declaration
 
@@ -36,6 +94,7 @@
  */
  
 + (UIImage *)imageWithName:(NSString *)name border:(CGFloat)border borderColor:(UIColor *)borderColor imgw:(CGFloat)imgw{
+    
     
     
 
@@ -99,9 +158,14 @@
  
     UIGraphicsEndImageContext();
  
+    
+    
+    
     return newImage;
+    
  
 }
+
 
 
 
@@ -178,6 +242,55 @@
 }
 
 
+
+/**
+ 按照图片的原来宽高比进行缩放
+ 
+ */
++ (UIImage*)getWatermarkImaheWithImgae:(UIImage*)image withWatermark:(NSString*)watermark watermarkColor:(UIColor*)watermarkColor imgw:(CGFloat)imgw{
+    
+    
+    
+    CGFloat imgh =imgw*image.size.height/image.size.width;
+    
+    
+    
+    
+    //1、开启上下文：创建一个基于位图的上下文（context）,并将其设置为当前上下文(context)。
+ /**
+  参数size为新创建的位图上下文的大小。它同时是由UIGraphicsGetImageFromCurrentImageContext函数返回的图形大小。
+  opaque—透明开关，如果图形完全不用透明，设置为YES以优化位图的存储。
+
+  scale—–缩放因子 iPhone 4是2.0，其他是1.0。
+  虽然这里可以用[UIScreen mainScreen].scale来获取，但实际上设为0后，系统就会自动设置正确的比例了。
+
+  */
+
+    
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(imgw,imgh ), NO, 0.0);
+    
+     
+    // 在坐标中画出图片
+    [image drawInRect:CGRectMake(0, 0, imgw, imgh)];
+    
+
+//        [image drawAtPoint:CGPointZero];//保持图片大小在point点开始画图片
+    
+     //watermark
+        [watermark drawAtPoint:CGPointMake(imgw*0.7, imgh*0.8) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:watermarkColor}];
+    
+     
+        //2、获取上下文图片
+     
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+     
+        //3、结束上下文
+     
+        UIGraphicsEndImageContext();
+     
+    return newImage;
+    
+}
 
 
 @end

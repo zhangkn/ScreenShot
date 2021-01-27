@@ -1,7 +1,7 @@
 //
 //  ViewController.m
 //  DrawingDemo
-//
+#import <Masonry/Masonry.h>
 //  Created by mac on 2021/1/23.
 #import "KNCustomView.h"
 
@@ -38,11 +38,47 @@
 //    [self setupwatermark];
     // 裁剪
     
-    [self setupclip];
+//    [self setupclip];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userDidTakeScreenshot:)
+                                                 name:UIApplicationUserDidTakeScreenshotNotification object:nil];
 
     
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
+
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    // 屏幕截图
+//    [self userDidTakeScreenshot:nil];
+
+    
+}
+
+/**
+ 监听物理截图的时候，进行根据视图尺寸获取视图截屏进行显示
+ */
+- (void)userDidTakeScreenshot:(id)Notifi{
+    
+    
+    UIView *view = self.navigationController.view ? self.navigationController.view : self.view;
+
+
+    UIImage  *WatermarkImg =  [UIImage ScreenShotWithV:view imgw:self.view.frame.size.width*0.5];
+    
+    
+    
+    self.view.backgroundColor = UIColor.systemGrayColor;
+
+    [self showImagetoVWithImg:WatermarkImg];
+
 }
 
 
@@ -93,7 +129,27 @@
     
     //2、显示图片
  
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, WatermarkImg.size.width, WatermarkImg.size.height)];
+    UIImageView *imageView =[UIImageView new];
+    
+    
+//    [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, WatermarkImg.size.width, WatermarkImg.size.height)];
+    
+    [self.view addSubview:imageView];
+
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        
+        make.centerX.offset(0);
+        
+        make.top.offset(100);
+    
+        make.size.mas_equalTo(WatermarkImg.size);
+        
+        
+        
+        
+    }];
     
     
 
@@ -105,16 +161,15 @@ imageView.contentMode = UIViewContentModeScaleAspectFit;//按照图片的原来�
     [imageView setImage:WatermarkImg];
     
  
-    [self.view addSubview:imageView];
  
     //3、保存图片
  
 //    NSData *data = UIImageJPEGRepresentation(newImage, 0.0001);// value 1.0 represents the least compression (or best quality)
  
-    NSData *data = UIImagePNGRepresentation(WatermarkImg);//将图片转换成二进制数据
+//    NSData *data = UIImagePNGRepresentation(WatermarkImg);//将图片转换成二进制数据
     
  
-    [data writeToFile:@"/Users/Mac/Desktop/gz.png" atomically:YES];// 模拟器
+//    [data writeToFile:@"/Users/Mac/Desktop/gz.png" atomically:YES];// 模拟器
 
 }
 
@@ -202,6 +257,14 @@ imageView.contentMode = UIViewContentModeScaleAspectFit;//按照图片的原来�
 
 }
 
+
+-(void)dealloc
+{
+//    [self RemoveCommonNav];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    //    self.navigationItem.hidesBackButton = NO;
+}
 
 
 @end

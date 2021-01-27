@@ -11,6 +11,31 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (KNClip)
+
+/**
+ 将视图内容保存为图片
+ 
+ view  目标视图
+ 
+ imgw： 图片宽， 此方法会根据imgw安装图片的原来宽高比进行缩放，计算对应的高
+
+ 
+ */
++ (UIImage *)ScreenShotWithV:(UIView*)view imgw:(CGFloat)imgw;
+
+/**
+ 
+ 获取带有水印的图片
+ image: 图片
+ watermark： 水印内容
+ 
+ watermarkColor： 水印颜色
+
+ 按照图片的原来宽高比进行缩放
+ 
+ */
++ (UIImage*)getWatermarkImaheWithImgae:(UIImage*)image withWatermark:(NSString*)watermark watermarkColor:(UIColor*)watermarkColor imgw:(CGFloat)imgw;
+
 /**
  裁剪
  imgw： 图片宽， 此方法会根据imgw安装图片的原来宽高比进行缩放，计算对应的高
